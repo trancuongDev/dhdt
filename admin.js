@@ -1394,7 +1394,7 @@ document.getElementById('naCopyBtn').addEventListener('click', () => {
     if (c >= '0' && c <= '9') return `số ${c}`;
     return c;
   }).join(' - ');
-  const text  = `Họ tên: ${name}\nMã HV: ${code}\nGmail: ${user}\nMật khẩu: ${pw}\n📖 Đọc: ${spelled}\nLớp: ${cls}\nNgày khai giảng: ${start}\nNgày kết thúc: ${end}\nSĐT: ${phone}\n\n👉 Bạn sao chép mật khẩu trên rồi dán vào chỗ mật khẩu trong web nha.\n🌐 Link học: https://trancuongdev.github.io/duyhoangdaytoanct/\nNếu gặp vấn đề kỹ thuật hay gì cứ liên hệ mình nha.`;
+  const text  = `Họ tên: ${name}\nMã HV: ${code}\nGmail: ${user}\nMật khẩu: ${pw}\n📖 Đọc: ${spelled}\nLớp: ${cls}\nNgày khai giảng: ${start}\nNgày kết thúc: ${end}\nSĐT: ${phone}\n\n👉 Bạn sao chép mật khẩu trên rồi dán vào chỗ mật khẩu trong web nha.\n🌐 Link học (chọn 1 trong 2):\n1️⃣ https://dhdt.quoctoan.io.vn/\n2️⃣ https://dhdt.trancuong08.io.vn/\nNếu gặp vấn đề kỹ thuật hay gì cứ liên hệ mình nha.`;
   navigator.clipboard?.writeText(text).then(() => {
     const btn = document.getElementById('naCopyBtn');
     btn.textContent = '✅ Đã sao chép!';
@@ -1536,7 +1536,7 @@ function renderStudentRow(s, today, expiredClasses) {
     });
   }
   tr.querySelector('[data-action="copy"]').addEventListener('click', () => {
-    const text = `Họ tên: ${s.full_name}\nMã HV: ${s.student_code||''}\nGmail: ${s.username}\nMật khẩu: ${s.student_code||''}\nLớp: ${s.class_name||''}\n\n🌐 Link học: https://trancuongdev.github.io/duyhoangdaytoanct/`;
+    const text = `Họ tên: ${s.full_name}\nMã HV: ${s.student_code||''}\nGmail: ${s.username}\nMật khẩu: ${s.student_code||''}\nLớp: ${s.class_name||''}\n\n🌐 Link học (chọn 1 trong 2):\n1️⃣ https://dhdt.quoctoan.io.vn/\n2️⃣ https://dhdt.trancuong08.io.vn/`;
     navigator.clipboard?.writeText(text).then(() => {
       const btn = tr.querySelector('[data-action="copy"]');
       btn.textContent = '✅ Đã copy!';
@@ -1956,7 +1956,7 @@ async function exportStudentCard(s) {
         ['Khai giang', startDate],
         ['Ket thuc', endDate],
         ['SDT', s.phone||'—'],
-        ['Link dang nhap', 'https://trcuongdve.github.io/duyhoangdaytoanct/'],
+        ['Link dang nhap', 'https://dhdt.quoctoan.io.vn/ hoặc https://dhdt.trancuong08.io.vn/'],
       ].map(([label, val]) => `
         <div style="display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:10px;padding:.6rem .9rem;border:1px solid #e0e7ff">
           <span style="font-size:.78rem;color:#64748b;font-weight:600">${label}</span>
